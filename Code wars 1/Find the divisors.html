@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function divisors(integer){
+  divs = [];
+  if(integer > 1){
+    for(i=2;i<=integer/2;i++){
+      if(integer % i ==0){
+        divs.push(i);
+      }
+    }
+  }
+  if(divs.length==0){
+      return `${integer} is prime`;
+  }
+  return divs;
+}
+
+console.log(divisors(13));
+// other solution
+function divisors(integer) {
+  var divisors = [...Array(integer).keys()].slice(2, integer).filter(div => integer % div == 0);
+  return divisors.length > 0 ? divisors : integer + ' is prime';
+};
+
+
+
+    </script>
+</body>
+</html>

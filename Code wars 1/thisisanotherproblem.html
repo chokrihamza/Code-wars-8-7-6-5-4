@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+class NamedOne {
+  constructor(f, l) { this.firstName = f; this.lastName = l }
+  get fullName() { return this.firstName + ' ' + this.lastName }
+  set fullName(v) { if (/ /.test(v)) [this.firstName, this.lastName] = v.split(' ') }
+}
+//other solution
+function NamedOne(first, last) {
+  this.firstName = first;
+  this.lastName = last;
+
+  Object.defineProperty(this, "fullName", {
+    set: function(value) {
+      var parts = value.split(" ");
+      if (parts.length === 2) {
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+      }
+    },
+    get: function() {
+      return this.firstName + ' ' + this.lastName;
+    }
+  });
+}
+//other solution
+function NamedOne(first, last){
+    this.firstName = first;
+    this.lastName = last;
+}
+
+NamedOne.prototype = {
+  get fullName(){
+    return this.firstName+' '+this.lastName;
+  },
+  set fullName(fn){
+    var name = fn.split(' ');
+    if(2 == name.length){
+      this.firstName = name[0];
+      this.lastName  = name[1];
+    }
+  }
+}
+
+
+
+
+    </script>
+</body>
+</html>

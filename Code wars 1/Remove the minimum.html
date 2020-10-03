@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ function removeSmallest(numbers) {
+  var out = []
+  var smallest = numbers[0];
+  for (var i = 0; i < numbers.length; i++) {
+    if (numbers[i] < smallest) {
+     smallest = numbers[i];
+    }
+  }
+  for (var j = 0; j < numbers.length; j++) {
+    if (j !== numbers.indexOf(smallest)) {
+      out.push(numbers[j]);
+    } 
+  }
+      // console.log(numbers.indexOf(smallest))
+  return out;
+}
+//other solution
+function removeSmallest(numbers) {
+  const min = Math.min.apply(this, numbers);
+  return numbers.filter((num, idx, arr) => idx !== arr.indexOf(min));
+}
+//other solution
+const removeSmallest = numbers => numbers.filter((n,i) => i !== numbers.indexOf(Math.min(...numbers)));
+    </script>
+</body>
+</html>

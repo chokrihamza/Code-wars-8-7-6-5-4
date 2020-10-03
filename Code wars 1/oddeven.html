@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ /*function trim(str){
+     return  str[Math.round(str.length/2)]+ str[Math.floor((str.length-1)/2)];
+      }*/
+      function trim(str){
+          if(str.length==1||str.length==2){
+              return str;
+          }else{
+              
+             return trim(str.slice(1,str.length-1));
+          }
+             }
+             console.log((trim("middle")));
+
+    </script>
+</body>
+</html>

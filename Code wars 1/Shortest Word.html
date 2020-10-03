@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findShort(s){
+    return s.split(' ').sort((a, b) => a.length - b.length)[0].length;
+}
+console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
+// other solution
+function findShort(s){
+  return Math.min.apply(null, s.split(' ').map(w => w.length));
+}
+//other solution
+function findShort(s){
+    return Math.min(...s.split(" ").map (s => s.length));
+}
+//other
+function findShort(s){
+  var arr = s.split(' ');
+  var min = arr[0].length;
+  for (var i = 1; i < arr.length; i++) {
+    if (arr[i].length < min) {
+      min = arr[i].length;
+    }
+  }
+  return min
+}
+//other
+function findShort(string) {
+  var array = string.split(' ');
+  var shortest = null;
+  
+  for (var i=0, l=array.length; i<l; ++i)
+  {
+    if (shortest == null || array[i].length < shortest)
+      shortest = array[i].length;
+  }
+  
+  return shortest;
+}
+//other
+const findShort = (s) =>  s.split(' ').reduce((r,c) => c.length < r ? c.length : r, s.length);
+//other
+function findShort(str){
+  return Math.min.apply(null, str.split(' ').map(word => word.length));
+}
+    </script>
+</body>
+</html>

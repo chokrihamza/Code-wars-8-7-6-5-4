@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function binaryAdd(a, b) {
+  const sum = a + b;
+
+  return toBinary(sum);
+}
+
+function toBinary(sum) {
+  if (sum === 0) {
+    return '0';
+  }
+
+  let binary = '';
+  while (sum > 0) {
+    const remainder = sum % 2;
+    binary = remainder + binary;
+    sum = Math.floor(sum / 2);
+  }
+
+  return binary;
+}
+
+console.log(binaryAdd(1, 0)); // 111
+// or
+function addBinary(a,b) {
+   let sum=a+b;
+  return sum.toString(2);
+}
+    </script>
+</body>
+</html>

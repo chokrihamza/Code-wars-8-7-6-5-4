@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Hogben's centered polygonal numbers: check this up
+        function rowSumOddNumbers(n) {
+            const oddnum=[];
+            let startnum= Math.pow(n,2)-n+1;
+            while(n>0){
+                oddnum.push(startnum);
+                startnum+=2;
+                n--;
+            }
+            let sum=oddnum.reduce((a,b)=>a+b);
+            return sum;
+        }
+// other solution
+function rowSumOddNumbers(n) {
+  // TODO
+  return n > 0 ? n * n * n : "Wrong Input"
+}
+    </script>
+</body>
+</html>

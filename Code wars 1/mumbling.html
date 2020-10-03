@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str="cwAt";
+        
+        
+        let x=str.split("")[0].toUpperCase().concat("-");
+        
+        for(let i=1;i<str.length;i++){
+            
+             x+=str.split("")[i].toUpperCase().concat(str.split("")[i].repeat(i).toLowerCase()).concat("-") ;
+           
+        }
+        console.log(x.slice(0,x.length-1));
+      
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

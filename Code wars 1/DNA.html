@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function DNAStrand(dna){
+  return dna.split('').map(x=>{ return x=="A"?x.replace(/A/i,'T'):x=="T"?x.replace(/T/i,'A'):x=="C"?x.replace(/C/i,'G'):x=="G"?x.replace(/G/i,'C'):dna}).join('');
+}
+console.log(DNAStrand("ATTGC"));
+//other solution
+var pairs = {'A':'T','T':'A','C':'G','G':'C'};
+
+function DNAStrand(dna){
+  return dna.split('').map(function(v){ return pairs[v] }).join('');
+}
+//*other solution
+function DNAStrand(dna){
+  return dna.replace(/A/g, 't').replace(/T/g, 'a').replace(/C/g, 'g').replace(/G/g, 'c').toUpperCase();
+}
+    </script>
+</body>
+</html>

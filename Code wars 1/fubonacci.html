@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function nthFibo(n) {
+            if(n==1){
+    return 0;
+  }       
+  if (n == 2){
+        return 1;
+    }else{
+        return nthFibo(n-2) + nthFibo(n-1);
+    }
+  
+}
+console.log(nthFibo(3));
+
+// autre solution
+function nthFibo(n) {
+  return Math.round((1/Math.sqrt(5))*Math.pow((1+Math.sqrt(5))/2,n-1))
+} 
+//autre solution
+function nthFibo(n) {
+  return n < 2 ? 0 : n == 2 ? 1 : nthFibo(n-1) + nthFibo(n-2);
+}
+    </script>
+</body>
+</html>

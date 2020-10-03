@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+function GrεεκL33t(str){
+  let Greeklist = {a:'α',b:'β',d:'δ',e:'ε',i:'ι',k:'κ',n:'η',o:'θ',p:'ρ',r:'π',t:'τ',u:'μ',
+  v:'υ',w:'ω',x:'χ',y:'γ'};
+  return str.replace(/./g,alpha=>{
+    if (Greeklist[alpha.toLowerCase()]){
+      return alpha===alpha.toUpperCase()?Greeklist[alpha.toLowerCase()]:Greeklist[alpha]
+    }
+    return alpha.toLowerCase()
+  })
+}
+console.log(GrεεκL33t("CodeWars"));
+ //othre solution
+ var map = {a:'α',b:'β',d:'δ',e:'ε',i:'ι',k:'κ',n:'η',o:'θ',p:'ρ',r:'π',t:'τ',u:'μ',v:'υ',w:'ω',x:'χ',y:'γ'};
+
+function GrεεκL33t(str){
+  return str.toLowerCase().replace(/./g, function(v){ return map[v] || v });
+}
+//other solution
+function GrεεκL33t(str){
+ return str
+ .toLowerCase()
+ .replace(/a/gi,'α')
+ .replace(/b/gi,'β')
+ .replace(/d/gi,'δ')
+ .replace(/e/gi,'ε')
+ .replace(/i/gi,'ι')
+ .replace(/k/gi,'κ')
+ .replace(/n/gi,'η')
+ .replace(/o/gi,'θ')
+ .replace(/p/gi,'ρ')
+ .replace(/r/gi,'π')
+ .replace(/t/gi,'τ')
+ .replace(/u/gi,'μ')
+ .replace(/v/gi,'υ')
+ .replace(/w/gi,'ω')
+ .replace(/x/gi,'χ')
+ .replace(/y/gi,'γ');
+}
+//other solution
+function GrεεκL33t(str){
+ str=str.toLowerCase();
+ var ans=''
+ for (var i=0; i<str.length; ++i)
+ {
+   if (str[i]=='o') ans+="θ";
+   else if (str[i]=='d') ans+="δ";
+   else if (str[i]=='r') ans+="π";
+   else if (str[i]=='e') ans+="ε";
+   else if (str[i]=='w') ans+="ω";
+   else if (str[i]=='a') ans+="α";
+   else if (str[i]=='k') ans+="κ";
+   else if (str[i]=='t') ans+="τ";
+   else if (str[i]=='u') ans+="μ";
+   else if (str[i]=='i') ans+="ι";
+   else if (str[i]=='v') ans+="υ";
+   else if (str[i]=='y') ans+="γ";
+   else if (str[i]=='n') ans+="η";
+   else if (str[i]=='b') ans+="β";
+   else if (str[i]=='x') ans+="χ";
+   else if (str[i]=='p') ans+="ρ";
+   else ans+=str[i]
+ 
+ }
+ return ans;
+}
+
+
+
+   </script> 
+</body>
+</html>

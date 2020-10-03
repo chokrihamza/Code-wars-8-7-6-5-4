@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // return masked string
+// return masked string
+function maskify(cc) {
+return (cc.length>3)? "#".repeat(cc.slice(0,cc.length-4).length).concat(cc.slice(cc.length-4,cc.length)):cc;
+}
+// other solution
+function maskify(cc) {
+  return cc.replace(/.(?=.{4})/g, "#");
+}
+//*other solution
+function maskify(cc) {
+  return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
+}
+    </script>
+</body>
+</html>

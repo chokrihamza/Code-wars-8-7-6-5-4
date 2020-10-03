@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function upArray(arr){
+  if (!arr.every(v=>v>=0)||arr.length===0) return null
+  if (arr.some(v=>v.toString().length>1)) return null
+  let arr1 =[];
+  for (let i=0;i<arr.length;i+=15){
+  arr1.push(arr.slice(i,i+15))
+  }
+  arr1[arr1.length-1]= arr1[arr1.length-1].join('')*1+1
+  arr1=arr1.map(v=>Array.isArray(v)?v.join('')*1:v)
+  return (arr1.join('')).split('').map(v=>v*1)
+}
+
+//other solution
+const BigNumber = require('bignumber.js');
+
+const upArray = arr =>
+  arr.length === 0 || arr.filter(x => x < 0 || x > 9).length > 0
+    ? null
+    : (new BigNumber(arr.join('')).plus(1))
+        .toPrecision()
+        .split('')
+        .map(Number);
+
+
+
+    </script>
+</body>
+</html>

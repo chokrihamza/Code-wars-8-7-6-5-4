@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ function nbYear(p0, percent, aug, p) {    
+let i=0
+   do{p0 = Math.floor(p0 * (1 + percent/100) + aug);
+    i++;
+   }while(p0<p)
+    return i
+} 
+console.log (nbYear(1500, 5, 100, 5000))
+    </script>
+</body>
+</html>
